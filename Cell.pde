@@ -14,6 +14,11 @@ class Cell{
     rect(startX+x,startY+y,size,size);
   }
   
+  void showPreview(int _x, int _y, int _size){
+    fill(col);
+    rect(_x,_y,_size,_size);
+  }
+  
   void setColor(color _col){
     this.col = _col;
   }

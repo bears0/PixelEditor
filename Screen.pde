@@ -31,6 +31,20 @@ class Screen{
     
     // Show the color picker
     colPicker.show();
+    
+    // Render a small preview
+    int firstX = (width/2)-(resolution/2*3);
+    canvas.render(firstX,100, 3);
+    canvas.render(firstX+(3*resolution),100, 3);
+    canvas.render(firstX-(3*resolution),100, 3);
+    
+    canvas.render(firstX,100-(3*resolution), 3);
+    canvas.render(firstX+(3*resolution),100-(3*resolution), 3);
+    canvas.render(firstX-(3*resolution),100-(3*resolution), 3);
+    
+    canvas.render(firstX,100+(3*resolution), 3);
+    canvas.render(firstX+(3*resolution),100+(3*resolution), 3);
+    canvas.render(firstX-(3*resolution),100+(3*resolution), 3);
   }
   
   void checkCanvasHover(int mx, int my){

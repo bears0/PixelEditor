@@ -25,8 +25,6 @@ class Canvas{
   }
   
   void show(){
-    
-    
     // Draw cells
     for(int i = 0; i < cells.size(); i++){
       cells.get(i).show(startX, startY);
@@ -64,4 +62,14 @@ class Canvas{
     //println("false");
     return false;
   }
+  
+  void render(int offX, int offY, int s){
+    // Draw cells
+    for(int i = 0; i < cells.size(); i++){
+      stroke(0,0,0,0);
+      cells.get(i).showPreview(offX+((i%res)*s), offY+((i/res)*s), s);
+    }
+    stroke(0);
+  }
+  
 }
