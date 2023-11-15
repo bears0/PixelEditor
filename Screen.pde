@@ -2,6 +2,7 @@ class Screen{
   int count;
   ArrayList<Column> columnList = new ArrayList<Column>();
   Canvas canvas;
+  ColorPicker colPicker = new ColorPicker(20, 20, 3, 10, 25);
   int resolution = 16;
 
   Screen(int _count, int[] w){
@@ -25,11 +26,31 @@ class Screen{
       columnList.get(i).show();
     }
     
+    // Show the canvas
     canvas.show();
+    
+    // Show the color picker
+    colPicker.show();
   }
   
   void checkCanvasHover(int mx, int my){
-    
+    canvas.checkHover(mx, my);
+  }
+  
+  void clickCell(int mx, int my, color col){
+    canvas.clickCell(mx,my,col);
+  }
+  
+  boolean inCanvas(int mx, int my){
+    return canvas.inCanvas(mx,my);
+  }
+  
+  boolean inColPicker(int mx, int my){
+    return colPicker.inColPicker(mx,my);
+  }
+  
+  color getPickedColor(int mx, int my){
+    return colPicker.getColor(mx,my);
   }
   
 }
